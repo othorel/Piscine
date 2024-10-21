@@ -12,7 +12,7 @@
 
 #include <unistd.h>
 
-void	ft_print_soluce(int	*tab)
+void	ft_print_soluce(int *tab)
 {
 	int		i;
 	char	c;
@@ -27,7 +27,7 @@ void	ft_print_soluce(int	*tab)
 	write (1, "\n", 1);
 }
 
-int	ft_safe(int	*tab, int row, int col)
+int	ft_safe(int *tab, int row, int col)
 {
 	int	i;
 
