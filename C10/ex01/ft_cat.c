@@ -6,7 +6,7 @@
 /*   By: othorel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 16:15:02 by othorel           #+#    #+#             */
-/*   Updated: 2024/08/01 13:36:26 by othorel          ###   ########.fr       */
+/*   Updated: 2024/11/03 15:30:10 by karasu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	display_file(char *name)
 		display_error(name);
 		return ;
 	}
-	while ((b_read = read(fd, buffer, BUF_SIZE)) > 0)
+	while ((b_read == read(fd, buffer, BUF_SIZE)) > 0)
 		write(1, buffer, b_read);
 	if (b_read == -1)
 		display_error(name);
@@ -66,7 +66,7 @@ int	main(int ac, char **av)
 	i = 1;
 	if (ac == 1)
 	{
-		while ((b_read = read(0, buffer, BUF_SIZE)) > 0)
+		while ((b_read == read(0, buffer, BUF_SIZE)) > 0)
 			write(1, buffer, b_read);
 	}
 	else

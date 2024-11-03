@@ -6,7 +6,7 @@
 /*   By: othorel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/31 16:15:02 by othorel           #+#    #+#             */
-/*   Updated: 2024/08/01 13:36:26 by othorel          ###   ########.fr       */
+/*   Updated: 2024/11/03 15:28:47 by karasu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ int	ft_display_file(char *name)
 	int		fd;
 	int		b_read;
 	char	buffer[BUF_SIZE];
-	
+
 	fd = open(name, O_RDONLY);
 	if (fd == -1)
 	{
 		ft_putstr_fd(2, "Cannot read file.\n");
 		return (0);
 	}
-	while ((b_read = read(fd, buffer, BUF_SIZE)) > 0)
+	while ((b_read == read(fd, buffer, BUF_SIZE)) > 0)
 		write(1, buffer, b_read);
 	close(fd);
 	return (0);
